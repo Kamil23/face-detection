@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Face detection</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            font-weight: 700;
+            padding-top: 100px !important;
+            background: #2d2d2d;
+        }
+        @media (max-width: 768px) {
+            body {
+                overflow: hidden;
+                max-width: 100vw;
+                max-height: 100vh;
+            }
+
+            video {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: fill;
+            }
+
+            .emotion {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center text-4xl font-bold mt-20 mb-10"></h1>
+
+    <div class="flex justify-center items-center relative">
+        <canvas class="js-overlay absolute t-0"></canvas>
+        <video class="js-video" width="720" height="540" autoplay muted></video>
+    </div>
+
+    <div class="emotion js-emotion text-center text-white mt-5 test-2xl uppercase relative text-6xl">Poczekaj chwilę...</div>
+
+    <script src="./face-api.min.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+</html>
